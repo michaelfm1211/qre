@@ -7,7 +7,7 @@ const db = redis.createClient({
   url: process.env.DATABASE_URL || null,
 });
 
-if (process.env.TRUST_PROXY) {
+if (process.env.TRUST_PROXY == 'true') {
   app.set('trust proxy');
 }
 if (process.env.NO_LOGS != 'false') {
