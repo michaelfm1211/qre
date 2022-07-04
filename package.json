@@ -1,0 +1,20 @@
+{
+  "name": "qre",
+  "version": "1.0.0",
+  "description": "quick redirect service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael M",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "redis": "^4.1.1"
+  }
+}
