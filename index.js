@@ -19,16 +19,16 @@ app.get('/', (_req, res) => {
 });
 
 app.get('/:id', async (req, res) => {
+  await db.connect()
   const url = await db.hGet('redirects', req.params.id);
   if (url) {
     res.redirect(url);
   } else {
     res.status(404).end('redirect not found');
   }
+  await db.quit();
 });
 
-db.connect().then(() => {
-  app.listen(process.env.PORT || 8080, () => {
-    console.log('Listening on ' + (process.env.PORT || 8080));
-  });
+app.listen(process.env.PORT || 8080, () => {
+  console.log('Listening on ' + (process.env.PORT || 8080));
 });
